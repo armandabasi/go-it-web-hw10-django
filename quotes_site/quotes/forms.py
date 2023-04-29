@@ -19,7 +19,7 @@ class AuthorForm(ModelForm):
 
 
 class QuoteForm(ModelForm):
-    author = ModelChoiceField(queryset=Author.objects.all(), widget=Select(attrs={'class': 'form-select'}))
+    author = ModelChoiceField(queryset=Author.objects.all().order_by("fullname"), widget=Select(attrs={'class': 'form-select'}))
     quote = CharField(widget=TextInput(attrs={"class": "form-control"}))
     tags = TagField(widget=TextInput(attrs={"class": "form-control"}))
 

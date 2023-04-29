@@ -4,7 +4,7 @@
 <main>
 
     <div class="px-4 pt-2 my-5 text-center border-bottom">
-        <h3 class="display-4 fw-bold text-body-emphasis">QuoteHive: A Hive of Inspiration and Wisdom</h3>
+        <h1 class="my_display-4 text-body-emphasis text-center">QuoteHive: A Hive of Inspiration and Wisdom</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">This website is a collection of famous quotes from books and speeches by authors,
                 politicians, artists, musicians, and other well-known personalities. It was created for quote
@@ -20,8 +20,10 @@
                 <p class="lead mb-4">This is an interesting and engaging resource that inspires and broadens horizons in the fields of
                 literature, art, politics, and other areas.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <a href="#"  class="btn btn-primary btn-lg px-4 me-sm-3">Random Quote</a>
+                <a href="{% url 'quotes:random_quote' %}"  class="btn btn-primary btn-lg px-4 me-sm-3">Random Quote</a>
+                {% if user.is_authenticated %}
                 <a href="{% url 'quotes:add_quote' %}" class="btn btn-outline btn-lg px-4">Add quotes</a>
+                {% endif%}
             </div>
         </div>
     </div>

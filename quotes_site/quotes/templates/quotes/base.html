@@ -26,12 +26,16 @@
             </li>
             <li class="nav-item"><a href="{% url 'quotes:quotes' %}"
                                     class="nav-link px-2 text-body-secondary">Quotes</a></li>
+            {% if not user.is_authenticated %}
             <li class="nav-item"><a href="{% url 'users:register' %}" class="nav-link px-2 text-body-secondary">Sign
                 up</a></li>
             <li class="nav-item"><a href="{% url 'users:login' %}" class="nav-link px-2 text-body-secondary">Sign in</a>
             </li>
+            {% endif %}
+            {% if user.is_authenticated %}
             <li class="nav-item"><a href="{% url 'users:logout' %}" class="nav-link px-2 text-body-secondary">Logout</a>
             </li>
+            {% endif %}
         </ul>
     </footer>
 </div>

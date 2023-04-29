@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = "/"
-LOGIN_URL = "users/signup"
+LOGIN_URL = "/users/signup"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

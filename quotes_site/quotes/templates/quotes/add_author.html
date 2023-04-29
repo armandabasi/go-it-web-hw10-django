@@ -1,7 +1,7 @@
 {% extends "quotes/base.html" %}
 
 {% block main %}
-<h3 class="display-6 fw-bold text-body-emphasis text-center">Add new author</h3>
+<h3 class="my_display-4 text-body-emphasis text-center">Add new author</h3>
 
 <div class="container col-xl-10 col-xxl-8 px-4 py-0">
     <div class="row align-items-center g-lg-5 py-5">
@@ -34,10 +34,25 @@
                 </div>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-3">
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
-                    <button class="w-100 btn btn-outline-secondary btn-lg px-4" type="reset">Reset</button>
+                    <button class="w-100 btn btn-outline btn-lg px-4" type="reset">Reset</button>
                 </div>
 
             </form>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <nav>
+                <ul class="d-flex justify-content-between w-100 mb-1 px-5 col-md-6 mx-auto">
+
+                    <a class="btn mb-1 mb-md-0 btn-outline "
+                       href="{% url 'quotes:add_quote' %}">
+                        Add quote
+                    </a>
+                    <a class="btn mb-1 mb-md-0 btn-outline"
+                       href="{% url 'quotes:quotes' %}">
+                        All quotes
+                    </a>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
